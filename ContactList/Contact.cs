@@ -12,9 +12,9 @@ namespace ContactList
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
-        
+
         // Constructor
-        public Contact(int id,string name, string email, string phone, string address)
+        public Contact(int id, string name, string email, string phone, string address)
         {
             this.Id = id;
             this.Name = name;

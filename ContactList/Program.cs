@@ -21,7 +21,7 @@ namespace ContactList
                         Console.WriteLine(" Input contact Email:");
                         var phone = Console.ReadLine();
                         Console.WriteLine(" Input contact physical address:");
-                        var address = Console.ReadLine();                        
+                        var address = Console.ReadLine();
                         Console.Clear();
                         phoneBook.MainMenuShow();
                         phoneBook.AddContact(name, email, phone, address);
@@ -43,7 +43,7 @@ namespace ContactList
                         Console.WriteLine(" Please input user ID");
                         var editId = Console.ReadLine();
                         int index = phoneBook.CanEdit(editId);
-                        if(index < 0)
+                        if (index < 0)
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine(" Contact not found!");
@@ -61,7 +61,7 @@ namespace ContactList
                         phone = Console.ReadLine();
                         Console.WriteLine(" Input contact physical address:");
                         address = Console.ReadLine();
-                        phoneBook.EditContact(index,name, email, phone, address);
+                        phoneBook.EditContact(index, name, email, phone, address);
                         break;
                     case "6":
                         Console.ForegroundColor = ConsoleColor.Red;
