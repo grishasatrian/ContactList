@@ -9,7 +9,7 @@ namespace ContactList
     {
         List<Contact> _contacts = new List<Contact>();
         int _id = 1;
-
+        
         private void DisplayContactDetails(Contact contact)
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -51,7 +51,7 @@ namespace ContactList
                 Console.WriteLine(" ID is number !!!");
                 Console.ResetColor();
                 return;
-            }            
+            }
             if (id == "")
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -109,11 +109,11 @@ namespace ContactList
         {
             // Handling exeptions with inputed string ...
             int id = 0;
-            if (!Int32.TryParse(editId,out id))
+            if (!Int32.TryParse(editId, out id))
                 return -1;
-            for (int i = 0; i< _contacts.Count; i++)
+            for (int i = 0; i < _contacts.Count; i++)
             {
-                if(_contacts[i].Id == Int32.Parse(editId))
+                if (_contacts[i].Id == Int32.Parse(editId))
                 {
                     return i;
                 }
@@ -151,7 +151,7 @@ namespace ContactList
                 Console.ResetColor();
                 return;
             }
-            _contacts.Add(new Contact(_id++,name, email, phone, address));
+            _contacts.Add(new Contact(_id++, name, email, phone, address));
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($" Contact {name} Successfully added!");
             Console.ResetColor();
@@ -160,7 +160,7 @@ namespace ContactList
         // Edit contact
         public void EditContact(int index, string name, string email, string phone, string address)
         {
-            
+
             if (name != "")
             {
                 _contacts[index].Name = name;
@@ -169,11 +169,11 @@ namespace ContactList
             {
                 _contacts[index].Email = email;
             }
-            else if (phone != "")
+            if (phone != "")
             {
                 _contacts[index].Phone = phone;
             }
-            else if (address != "")
+            if (address != "")
             {
                 _contacts[index].Address = address;
             }
@@ -201,7 +201,7 @@ namespace ContactList
                 Console.ResetColor();
                 return;
             }
-            if (_contacts[index].Id != Int32.Parse(id) )
+            if (_contacts[index].Id != Int32.Parse(id))
             {
                 Console.BackgroundColor = ConsoleColor.Red;
                 Console.WriteLine($" Contact with {id} not found! ");
@@ -212,7 +212,7 @@ namespace ContactList
             {
                 for (int i = 0; i < _contacts.Count; i++)
                 {
-                    if(_contacts[i].Id == Int32.Parse(id))
+                    if (_contacts[i].Id == Int32.Parse(id))
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(" Contact Removed Succesfully!");
